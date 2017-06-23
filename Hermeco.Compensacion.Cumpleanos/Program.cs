@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -19,11 +20,13 @@ namespace Hermeco.Compensacion.Cumpleanos
             Thread.CurrentThread.CurrentCulture = new CultureInfo("es-CO");
 
             var listEmpleadosCumpleHoy = empleadosCumple.EmployeeIntranet.Where(x => x.BirthDay.ToLower().Equals(DateTime.Now.ToString("dd MMMM").TrimStart('0').ToLower())).ToList();
-            
+
+            string fromEmail = ConfigurationManager.AppSettings["FromEmail"].ToString();
+
             //Enviar correo
             foreach(var empleado in listEmpleadosCumpleHoy)
             {
-                
+                Utility.sendEmail("", "", "", fromEmail, empleado.EMail, "", true, "", null);                
             }
         }
     }
