@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://iissvr/wsEmpleadosSAP/EmpleadosSAP.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/EmpleadosSAP" />
+  <xs:element name="GetEmpleadoSAP">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEmpleadoSAPResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/EmpleadosSAP" minOccurs="0" name="GetEmpleadoSAPResult" nillable="true" type="q1:GetEmployeeSAPResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAnniversariesOfTheWeek">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAnniversariesOfTheWeekResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/EmpleadosSAP" minOccurs="0" name="GetAnniversariesOfTheWeekResult" nillable="true" type="q2:GetEmployeeIntranetResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBirthdaysOfTheWeek">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBirthdaysOfTheWeekResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/EmpleadosSAP" minOccurs="0" name="GetBirthdaysOfTheWeekResult" nillable="true" type="q3:GetEmployeeIntranetResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAnniversariesOfTheMonth">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAnniversariesOfTheMonthResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/EmpleadosSAP" minOccurs="0" name="GetAnniversariesOfTheMonthResult" nillable="true" type="q4:GetEmployeeIntranetResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHiring">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHiringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/EmpleadosSAP" minOccurs="0" name="GetHiringResult" nillable="true" type="q5:GetEmployeeIntranetResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchByCompleteName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strParam" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchByCompleteNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/EmpleadosSAP" minOccurs="0" name="SearchByCompleteNameResult" nillable="true" type="q6:GetEmployeeIntranetResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchByIdNo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strParam" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchByIdNoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/EmpleadosSAP" minOccurs="0" name="SearchByIdNoResult" nillable="true" type="q7:GetEmployeeIntranetResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBirthdays">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBirthdaysResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/EmpleadosSAP" minOccurs="0" name="GetBirthdaysResult" nillable="true" type="q8:GetEmployeeIntranetResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAnniversaries">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAnniversariesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/EmpleadosSAP" minOccurs="0" name="GetAnniversariesResult" nillable="true" type="q9:GetEmployeeIntranetResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDatosEmpleados">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDatosEmpleadosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/EmpleadosSAP" minOccurs="0" name="GetDatosEmpleadosResult" nillable="true" type="q10:GetEmployeeIntranetResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

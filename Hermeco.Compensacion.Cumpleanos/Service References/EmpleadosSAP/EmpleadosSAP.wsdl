@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="EmpleadosSAP" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://iissvr/wsEmpleadosSAP/EmpleadosSAP.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://iissvr/wsEmpleadosSAP/EmpleadosSAP.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://iissvr/wsEmpleadosSAP/EmpleadosSAP.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/EmpleadosSAP" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IEmpleadosSAPService_GetEmpleadoSAP_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmpleadoSAP" />
+  </wsdl:message>
+  <wsdl:message name="IEmpleadosSAPService_GetEmpleadoSAP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmpleadoSAPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmpleadosSAPService_GetAnniversariesOfTheWeek_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAnniversariesOfTheWeek" />
+  </wsdl:message>
+  <wsdl:message name="IEmpleadosSAPService_GetAnniversariesOfTheWeek_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAnniversariesOfTheWeekResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmpleadosSAPService_GetBirthdaysOfTheWeek_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBirthdaysOfTheWeek" />
+  </wsdl:message>
+  <wsdl:message name="IEmpleadosSAPService_GetBirthdaysOfTheWeek_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBirthdaysOfTheWeekResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmpleadosSAPService_GetAnniversariesOfTheMonth_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAnniversariesOfTheMonth" />
+  </wsdl:message>
+  <wsdl:message name="IEmpleadosSAPService_GetAnniversariesOfTheMonth_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAnniversariesOfTheMonthResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmpleadosSAPService_GetHiring_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHiring" />
+  </wsdl:message>
+  <wsdl:message name="IEmpleadosSAPService_GetHiring_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHiringResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmpleadosSAPService_SearchByCompleteName_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchByCompleteName" />
+  </wsdl:message>
+  <wsdl:message name="IEmpleadosSAPService_SearchByCompleteName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchByCompleteNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmpleadosSAPService_SearchByIdNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchByIdNo" />
+  </wsdl:message>
+  <wsdl:message name="IEmpleadosSAPService_SearchByIdNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchByIdNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmpleadosSAPService_GetBirthdays_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBirthdays" />
+  </wsdl:message>
+  <wsdl:message name="IEmpleadosSAPService_GetBirthdays_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBirthdaysResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmpleadosSAPService_GetAnniversaries_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAnniversaries" />
+  </wsdl:message>
+  <wsdl:message name="IEmpleadosSAPService_GetAnniversaries_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAnniversariesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmpleadosSAPService_GetDatosEmpleados_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDatosEmpleados" />
+  </wsdl:message>
+  <wsdl:message name="IEmpleadosSAPService_GetDatosEmpleados_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDatosEmpleadosResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IEmpleadosSAPService">
+    <wsdl:operation name="GetEmpleadoSAP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmpleadosSAPService/GetEmpleadoSAP" message="tns:IEmpleadosSAPService_GetEmpleadoSAP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmpleadosSAPService/GetEmpleadoSAPResponse" message="tns:IEmpleadosSAPService_GetEmpleadoSAP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAnniversariesOfTheWeek">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmpleadosSAPService/GetAnniversariesOfTheWeek" message="tns:IEmpleadosSAPService_GetAnniversariesOfTheWeek_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmpleadosSAPService/GetAnniversariesOfTheWeekResponse" message="tns:IEmpleadosSAPService_GetAnniversariesOfTheWeek_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBirthdaysOfTheWeek">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmpleadosSAPService/GetBirthdaysOfTheWeek" message="tns:IEmpleadosSAPService_GetBirthdaysOfTheWeek_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmpleadosSAPService/GetBirthdaysOfTheWeekResponse" message="tns:IEmpleadosSAPService_GetBirthdaysOfTheWeek_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAnniversariesOfTheMonth">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmpleadosSAPService/GetAnniversariesOfTheMonth" message="tns:IEmpleadosSAPService_GetAnniversariesOfTheMonth_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmpleadosSAPService/GetAnniversariesOfTheMonthResponse" message="tns:IEmpleadosSAPService_GetAnniversariesOfTheMonth_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHiring">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmpleadosSAPService/GetHiring" message="tns:IEmpleadosSAPService_GetHiring_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmpleadosSAPService/GetHiringResponse" message="tns:IEmpleadosSAPService_GetHiring_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchByCompleteName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmpleadosSAPService/SearchByCompleteName" message="tns:IEmpleadosSAPService_SearchByCompleteName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmpleadosSAPService/SearchByCompleteNameResponse" message="tns:IEmpleadosSAPService_SearchByCompleteName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchByIdNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmpleadosSAPService/SearchByIdNo" message="tns:IEmpleadosSAPService_SearchByIdNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmpleadosSAPService/SearchByIdNoResponse" message="tns:IEmpleadosSAPService_SearchByIdNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBirthdays">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmpleadosSAPService/GetBirthdays" message="tns:IEmpleadosSAPService_GetBirthdays_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmpleadosSAPService/GetBirthdaysResponse" message="tns:IEmpleadosSAPService_GetBirthdays_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAnniversaries">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmpleadosSAPService/GetAnniversaries" message="tns:IEmpleadosSAPService_GetAnniversaries_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmpleadosSAPService/GetAnniversariesResponse" message="tns:IEmpleadosSAPService_GetAnniversaries_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDatosEmpleados">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmpleadosSAPService/GetDatosEmpleados" message="tns:IEmpleadosSAPService_GetDatosEmpleados_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmpleadosSAPService/GetDatosEmpleadosResponse" message="tns:IEmpleadosSAPService_GetDatosEmpleados_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IEmpleadosSAPService" type="tns:IEmpleadosSAPService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetEmpleadoSAP">
+      <soap:operation soapAction="http://tempuri.org/IEmpleadosSAPService/GetEmpleadoSAP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnniversariesOfTheWeek">
+      <soap:operation soapAction="http://tempuri.org/IEmpleadosSAPService/GetAnniversariesOfTheWeek" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBirthdaysOfTheWeek">
+      <soap:operation soapAction="http://tempuri.org/IEmpleadosSAPService/GetBirthdaysOfTheWeek" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnniversariesOfTheMonth">
+      <soap:operation soapAction="http://tempuri.org/IEmpleadosSAPService/GetAnniversariesOfTheMonth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHiring">
+      <soap:operation soapAction="http://tempuri.org/IEmpleadosSAPService/GetHiring" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByCompleteName">
+      <soap:operation soapAction="http://tempuri.org/IEmpleadosSAPService/SearchByCompleteName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByIdNo">
+      <soap:operation soapAction="http://tempuri.org/IEmpleadosSAPService/SearchByIdNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBirthdays">
+      <soap:operation soapAction="http://tempuri.org/IEmpleadosSAPService/GetBirthdays" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnniversaries">
+      <soap:operation soapAction="http://tempuri.org/IEmpleadosSAPService/GetAnniversaries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatosEmpleados">
+      <soap:operation soapAction="http://tempuri.org/IEmpleadosSAPService/GetDatosEmpleados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EmpleadosSAP">
+    <wsdl:port name="BasicHttpBinding_IEmpleadosSAPService" binding="tns:BasicHttpBinding_IEmpleadosSAPService">
+      <soap:address location="http://iissvr/wsEmpleadosSAP/EmpleadosSAP.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
