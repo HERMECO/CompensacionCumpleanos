@@ -22,6 +22,7 @@ namespace Hermeco.Compensacion.Cumpleanos
             var listEmpleadosCumpleHoy = empleadosCumple.EmployeeIntranet.Where(x => x.BirthDay.ToLower().Equals(DateTime.Now.ToString("dd MMMM").TrimStart('0').ToLower())).ToList();
 
             string fromEmail = ConfigurationManager.AppSettings["FromEmail"].ToString();
+            string smtpServer = ConfigurationManager.AppSettings["SMTPServer"].ToString();
 
             //Enviar correo
             foreach(var empleado in listEmpleadosCumpleHoy)

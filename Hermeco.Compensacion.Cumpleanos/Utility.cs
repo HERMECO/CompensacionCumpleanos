@@ -10,12 +10,12 @@ namespace Hermeco.Compensacion.Cumpleanos
 {
     public class Utility
     {
-        public static void sendEmail(string subject, string htmlPath, string body, string from, string to, string pathAttachment, bool isBodyHtml, string CC, Dictionary<string, string> parameters = null)
+        public static void sendEmail(string smtpServer, string subject, string htmlPath, string body, string from, string to, string pathAttachment, bool isBodyHtml, string CC, Dictionary<string, string> parameters = null)
         {
 
             MailMessage mail = new MailMessage(from, to);
 
-            SmtpClient client = new SmtpClient() { Port = 25, DeliveryMethod = SmtpDeliveryMethod.Network, UseDefaultCredentials = false, Host = "correo.hermeco.com" };            
+            SmtpClient client = new SmtpClient() { Port = 25, DeliveryMethod = SmtpDeliveryMethod.Network, UseDefaultCredentials = false, Host = smtpServer };            
 
             if (isBodyHtml)
             {
