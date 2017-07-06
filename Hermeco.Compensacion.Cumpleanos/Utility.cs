@@ -11,6 +11,8 @@ namespace Hermeco.Compensacion.Cumpleanos
 {
     public class Utility
     {
+        public string arg1 {get; set;}
+
         public static void sendEmail(string smtpServer, string subject, string htmlPath, string body, string from, string to, string pathAttachment, bool isBodyHtml, string CC, Dictionary<string, string> parameters = null)
         {
 

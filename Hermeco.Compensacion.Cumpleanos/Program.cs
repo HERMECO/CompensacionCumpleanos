@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Reflection;
 
 namespace Hermeco.Compensacion.Cumpleanos
 {
@@ -13,8 +14,9 @@ namespace Hermeco.Compensacion.Cumpleanos
     {
         static void Main(string[] args)
         {
-            EmpleadosSAP.EmpleadosSAPServiceClient client = new EmpleadosSAP.EmpleadosSAPServiceClient();    
-        
+
+            EmpleadosSAP.EmpleadosSAPServiceClient client = new EmpleadosSAP.EmpleadosSAPServiceClient();
+
             Hermeco.Compensacion.Cumpleanos.EmpleadosSAP.GetEmployeeIntranetResponse empleadosCumple = client.GetBirthdaysOfTheWeek();
 
             Thread.CurrentThread.CurrentCulture = new CultureInfo("es-CO");
@@ -25,11 +27,21 @@ namespace Hermeco.Compensacion.Cumpleanos
             string smtpServer = ConfigurationManager.AppSettings["SMTPServer"].ToString();
             string subject = string.Empty;
             //Enviar correo
-            foreach(var empleado in listEmpleadosCumpleHoy)
-            {                
-                subject = string.Format("¡{0}, Feliz Cumpleaños te desea la familia OFFCORSS!", empleado.FirstName.Trim().Split(' ')[0]);                
-                Utility.sendEmail(smtpServer, subject, AppDomain.CurrentDomain.BaseDirectory +"\\Email\\Cumpleanos.html", "", fromEmail, empleado.EMail, "", true, "", null);
-                                
+            foreach (var empleado in listEmpleadosCumpleHoy)
+            {
+                try
+                {
+                    subject = string.Format("¡{0}, Feliz Cumpleaños te desea la familia OFFCORSS!", empleado.FirstName.Trim().Split(' ')[0]);
+                    if (!string.IsNullOrEmpty(empleado.EMail))
+                    {
+                        Utility.sendEmail(smtpServer, subject, AppDomain.CurrentDomain.BaseDirectory + "\\Email\\Cumpleanos.html", "", fromEmail, empleado.EMail, "", true, "", null);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
+
             }
         }
     }
